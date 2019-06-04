@@ -35,6 +35,43 @@ interface{}类型的变量也是可以比较的：
     [num]T  可比较 编译期知道两个数组是否一致
     结构体  可比较 可以逐个比较结构体的值
     函数     可比较
+
+interface{}的一个很好的用法：
+    type Dictionary struct {
+	data map[interface{}]interface{} // set the type of KEY_VALUE as interface{} to accept any type
+}
+
+func (d *Dictionary) Get (key interface{}) interface{} {
+	return d.data[key]
+}
+
+func (d *Dictionary) Set (key interface{},value interface{}) {
+	d.data[key] = value
+}
+
+func (d *Dictionary) Visit (callback func(k, v interface{}) bool)  {
+	if callback == nil{
+		return
+	}
+	for k, v := range d.data{
+		if !callback(k, v){
+			return
+		}
+	}
+}
+
+func (d *Dictionary) Clear ()  {
+	d.data = make(map[interface{}]interface{})
+}
+
+func NewDictionary() *Dictionary{
+	d := &Dictionary{}
+	d.Clear()
+	return d
+}
+
+func main() {
+}
     
     
     
