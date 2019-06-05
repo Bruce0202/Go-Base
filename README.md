@@ -3,7 +3,7 @@
 有关go的一些基础
 
 ## Go语言的函数类型实现接口（把函数作为接口来调用）
-Go语言中的interface是个很有意思的东西，把数据的传递分离开了，有点相互通讯的意思
+>Go语言中的interface是个很有意思的东西，把数据的传递分离开了，有点相互通讯的意思
 
     type FuncCaller func(interface{}) //这里讲匿名函数定义为类型，共之后实现接口用，因为函数声明不能直接作为接口    
     func (f FuncCaller) Call(p interface{}){
@@ -19,11 +19,11 @@ Go语言中的interface是个很有意思的东西，把数据的传递分离开
     invoker.Call("Hello")
     
 ## Go语言空接口类型（interface{}）
-go语言中的interface{}相当于c++中的std::any。空接口保存一个数据的过程会比直接用数据对应的类型保存数据稍慢  
-空接口不能将值直接赋值给相应的数据类型  
-比如：  
-    var a int = 1  
-    var i interface{} = a  
+>go语言中的interface{}相当于c++中的std::any。空接口保存一个数据的过程会比直接用数据对应的类型保存数据稍慢  
+>空接口不能将值直接赋值给相应的数据类型  
+>比如：  
+>>   var a int = 1  
+>>    var i interface{} = a  
     var num int = i  
     上面的程序会报错，因为，i是interface{}类型的，不能直接赋值给int型的变量  
     可以使用 type assertion（断言）  
@@ -38,7 +38,7 @@ interface{}类型的变量也是可以比较的：
 
 interface{}的一个很好的用法：  
 ```
-    type Dictionary struct {
+type Dictionary struct {
 	data map[interface{}]interface{} // set the type of KEY_VALUE as interface{} to accept any type
 }
 
