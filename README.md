@@ -87,6 +87,9 @@ export GOPATH=`pwd`
 >>不会被设定到环境变量的GOPATH中，但是编译的时候会使用这个目录。
 >>`建议在开发的时候不要使用global GOPATH这个`
 
+##go并发  
+	goroutine是由Go语言的运行时调度完成的，而线程是由操作系统调度完成的，其中channel是多个goroutine之间通讯的基础
+
     
     
     
