@@ -36,7 +36,8 @@ interface{}类型的变量也是可以比较的：
     结构体  可比较 可以逐个比较结构体的值  
     函数     可比较  
 
-interface{}的一个很好的用法：
+interface{}的一个很好的用法：  
+```
     type Dictionary struct {
 	data map[interface{}]interface{} // set the type of KEY_VALUE as interface{} to accept any type
 }
@@ -73,6 +74,7 @@ func NewDictionary() *Dictionary{
 
 func main() {
 }
+```
     
     
     
