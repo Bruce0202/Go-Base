@@ -75,6 +75,14 @@ func NewDictionary() *Dictionary{
 func main() {
 }
 ```
+##Go package  
+>GOPATH
+>>GOPATH 指定的是工程目录，代码会保存在$GOPATH/src下面，工程经过go build, go install, go get之后会产生二进制文件是放在$DOPATH/bin下面
+>>中间的缓存文件会保存在$GOPATH/pkg下；
+>>在利用终端去编写go的package的时候，如果不是在默认的目录下，每次都应该指定GOPATH的值，用的是
+```
+export GOPATH=`pwd`
+```
     
     
     
