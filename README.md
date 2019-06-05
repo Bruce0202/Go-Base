@@ -81,7 +81,7 @@ func main() {
 >>中间的缓存文件会保存在$GOPATH/pkg下；
 >>在利用终端去编写go的package的时候，如果不是在默认的目录下，每次都应该指定GOPATH的值，用的是
 ```
-export GOPATH=`pwd`
+	export GOPATH=`pwd`
 ```
     
     
