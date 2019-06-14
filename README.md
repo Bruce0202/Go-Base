@@ -90,6 +90,13 @@ export GOPATH=`pwd`
 ##go并发  
 	goroutine是由Go语言的运行时调度完成的，而线程是由操作系统调度完成的，其中channel是多个goroutine之间通讯的基础
 
+##下面是一些刚刚接触git的哟用法  
+>>    首先要有四个仓库的概念，workspace， index/stage， repository， remote；
+分别是工作区，缓存区，仓库区（或本地仓库），远程仓库  
+新建代码库git init, git init [project name], git clone URL
+ 
+ >>fork(形成本地的代码库)， pull request（发送合拼请求）
+ 
     
     
     
