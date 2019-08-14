@@ -96,8 +96,6 @@ export GOPATH=`pwd`
 新建代码库git init, git init [project name], git clone URL
  
  >>fork(形成本地的代码库)， pull request（发送合拼请求）
- 
-    
     
     
     
