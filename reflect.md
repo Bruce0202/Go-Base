@@ -16,7 +16,21 @@
  相较与t，v的只有三个值:  
  `typ *rtype`  
  `ptr unsafe.Pointer`  
- `flag`
+ `flag`  
+ 对于使用来说，v的typ这个字段很重要，我们可以看到typ的类型是*rtype，这里就要提起
+ `reflect.TypeOF()`的底层的实现了，在go的源码里面我们可以看到typeOf的实现是这样的
+ ``````
+ func TypeOf(i interface{}) Type {
+ 	eface := *(*emptyInterface)(unsafe.Pointer(&i))
+ 	return toType(eface.typ)
+ }
+ func toType(t *rtype) Type {
+ 	if t == nil {
+ 		return nil
+ 	}
+ 	return t
+ }
+ ``````  
  
 
  
